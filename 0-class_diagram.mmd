@@ -1,0 +1,30 @@
+---
+title: Library Loan System
+---
+classDiagram
+    Library <.. Book
+    Library <.. User
+    Library <.. Loan
+    Book <.. Loan
+    User <.. Loan
+    class Library{
+        +add_book()
+        +register_user()
+        +create_loan()
+    }
+    class Book{
+        +title: string
+        +author: string
+        +state: bool
+        +mark_as_unavailable() bool
+        +mark_as_available() bool
+    }
+    class User{
+        +name: string
+        +email: string
+    }
+    class Loan{
+        +start_date: int
+        +end_date: int
+        +close_loan(book)
+    }

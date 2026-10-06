@@ -48,8 +48,5 @@ def main() -> None:
 
     factory.register_kind("scooter", Scooter)
     print(factory.create("scooter").mode())
-
-
-
 if __name__ == "__main__":
     main()

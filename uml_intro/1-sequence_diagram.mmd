@@ -1,0 +1,19 @@
+---
+title: Library Loan System
+---
+sequenceDiagram
+    actor User
+    participant Library
+    participant Book
+    User ->>Library: request a loan
+    Library ->>Book: check availablity
+    alt if book is available
+        Book ->>Library: is available
+    else
+        Book ->>Library: is unavailable
+        Library ->>User: book not available
+    end
+    Library ->>Book: mark as unavailable
+    create participant Loan
+    Library ->>Loan: create Loan
+    Library ->>User: loan created
